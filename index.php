@@ -71,18 +71,6 @@ header('Expires: 0');
 
         });
 
-navigator.clipboard.readText()
-
-  // (A2) PUT CLIPBOARD INTO TEXT FIELD
-  .then(txt => {
-    document.getElementById("url-field").value = txt;
-  })
-
-  // (A3) OPTIONAL - CANNOT ACCESS CLIPBOARD
-  .catch(err => {
-    alert("Please allow clipboard access permission");
-  });
-
         if (!navigator.serviceWorker.controller) {
             navigator.serviceWorker.register("sw.js").then(function(reg) {
                 console.log("Service worker has been registered for scope: " + reg.scope);
